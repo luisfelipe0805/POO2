@@ -1,9 +1,20 @@
 package br.edu.ifg.poo2.trabalhofinal.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="CLIENTE")
 public class Cliente {
+	@Id
 	private int id;
+	@Column(name="NOME", length=100)
 	private String nome;
+	@Column(name="CPF", length=11)
 	private String cpf;
+	@Column(name="CODIGO", length=50)
 	private String codigo;
 	
 	public Cliente() {
