@@ -2,14 +2,20 @@ package br.edu.ifg.poo2.trabalhofinal.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+
 @Entity
 @Table(name="CLIENTE")
+@EntityListeners(AuditingEntityListener.class)
+
 public class Cliente {
 	@Id
-	private int id;
+	private Long id;
 	@Column(name="NOME", length=100)
 	private String nome;
 	@Column(name="CPF", length=11)
@@ -21,17 +27,17 @@ public class Cliente {
 		super();
 	}	
 	
-	public Cliente(int id, String nome, String cpf, String codigo) {
+	public Cliente(Long id, String nome, String cpf, String codigo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.codigo = codigo;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
