@@ -6,11 +6,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifg.poo2.trabalhofinal.entidades.Cliente;
 
-@Service
+@Repository
 public class ClienteDao {
 	
 	@Autowired
@@ -18,9 +19,9 @@ public class ClienteDao {
 	
 	
 	public void inserirCliente(Cliente	 cliente) {		
-//		entityManager.getTransaction().begin();
+		entityManager.getTransaction().begin();
 		entityManager.persist(cliente);
-//		entityManager.getTransaction().commit();
+		entityManager.getTransaction().commit();
 	}
 	
 	public void atualiza( Cliente cliente){
