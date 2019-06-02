@@ -11,6 +11,7 @@ import br.edu.ifg.poo2.trabalhofinal.entidades.Fornecedor;
 
 public class FornecedorDao {
 	
+	
 	@Autowired
 	private EntityManager entityManager;
 	
