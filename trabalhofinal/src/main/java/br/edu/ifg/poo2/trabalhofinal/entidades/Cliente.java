@@ -36,13 +36,6 @@ public class Cliente implements Serializable{
 		super();
 	}	
 	
-	public Cliente(Integer id, String nome, String cpf, String codigo) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.cpf = cpf;
-		this.codigo = codigo;
-	}
 	public long getId() {
 		return id;
 	}
