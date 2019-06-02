@@ -4,6 +4,14 @@
 	
 	<head>
 		<title>Cadastro Cliente</title>
+
+		<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	
 	<body>
@@ -18,10 +26,15 @@
 			Sexo:<br>
 			 <input type="radio" name="sexo" value="m" checked> Masculino<br>
  			 <input type="radio" name="sexo" value="s"> Feminino<br>
-  			
+  		
 
-
-			<button type = "submit" > Salvar</button>
+  		<button class="btn-small waves-effect waves-light" type="submit" >Salvar<i class="material-icons right">send</i></button>
+  		
+		<h3 ><a href="/cliente" class="waves-effect waves-light btn-small"><i class="material-icons left">close</i>Cancelar</a></h3>	
 		</form>	
+		
+
+		<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	</body>
 	</html>

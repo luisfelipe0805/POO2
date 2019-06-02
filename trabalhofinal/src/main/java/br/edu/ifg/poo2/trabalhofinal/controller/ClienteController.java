@@ -47,9 +47,10 @@ public class ClienteController {
 		ModelAndView modelView = new ModelAndView("cliente/listaClientes");
 		Iterable<Cliente> listaClientes = clientedao.findAll();
 		modelView.addObject("clientes", listaClientes);
-		
 		return modelView;
 	}
+	
+	
 	
 	
 }
