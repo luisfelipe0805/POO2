@@ -9,9 +9,16 @@
 	<body>
 		<h1>Cadastro de Cliente</h1>
 		<form method="post">
-			Nome: <input type="text" name="nome" value=""/>
-			Cpf: <input type="text" name="cpf" value=""/>
-			Codigo: <input type="text" name="codigo" value=""/>
+			Nome: <br>
+			<input type="text" name="nome" value=""/><br>
+			Cpf:<br>
+			<input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" ><br>
+			Codigo:<br>
+			 <input type="text" name="codigo" value=""/><br>
+			Sexo:<br>
+			 <input type="radio" name="sexo" value="m" checked> Masculino<br>
+ 			 <input type="radio" name="sexo" value="s"> Feminino<br>
+  			
 
 
 			<button type = "submit" > Salvar</button>

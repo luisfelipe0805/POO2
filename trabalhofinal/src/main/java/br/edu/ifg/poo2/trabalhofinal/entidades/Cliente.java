@@ -27,6 +27,8 @@ public class Cliente implements Serializable{
 	private String cpf;
 	@Column(name="CODIGO", length=50)
 	private String codigo;
+	@Column(name="SEXO", length=1)
+	private String sexo;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -64,6 +66,14 @@ public class Cliente implements Serializable{
 	}
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 	
 	

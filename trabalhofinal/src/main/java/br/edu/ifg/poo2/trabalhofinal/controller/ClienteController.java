@@ -17,15 +17,30 @@ public class ClienteController {
 	ClienteRepository clientedao;
 //	ClienteDao clientedao;
 	
-	@RequestMapping(value="/cadastrocliente", method = RequestMethod.GET)
-	public String cliente(){
-		return "cliente/cadastroCliente";
-	}
-	
 	@RequestMapping(value="/cadastrocliente", method = RequestMethod.POST)
 	public String cliente(Cliente cliente){
 		clientedao.save(cliente);
 //		clientedao.inserirCliente(cliente);
-		return "redirect:/cadastrocliente";
+		return "redirect:/clienteCadastrado";
 	}
+	
+	
+	@RequestMapping(value="/cliente")
+	public String cliente(){
+		return "cliente/cliente";
+	}
+	
+	@RequestMapping(value="/cadastrocliente", method = RequestMethod.GET)
+	public String cadastroCliente(){
+		return "cliente/cadastroCliente";
+	}
+	
+
+	
+	@RequestMapping(value="/clienteCadastrado", method = RequestMethod.GET)
+	public String clienteCadastrado(){
+		return "cliente/clienteCadastrado";
+	}
+
+	
 }
