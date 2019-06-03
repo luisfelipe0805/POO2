@@ -20,15 +20,15 @@
 			<tr>
 				<th>Nome</th>
 				<th>CPF</th>
-				<th>Codigo</th>
+				<th>RG</th>
 				<th>Sexo</th>
 			</tr>		
 		</thead>
 		<tbody>
-		<tr th:each= "cliente : ${clientes}">
+		<tr th:each= "cliente : ${cliente}">
 			<td><span th:text ="${cliente.nome}"></span></td>
 			<td><span th:text ="${cliente.cpf}"></span></td>
-			<td><span th:text ="${cliente.codigo}"></span></td>
+			<td><span th:text ="${cliente.rg}"></span></td>
 			<td><span th:text ="${cliente.sexo}"></span></td>
 		</tr>
 

@@ -52,18 +52,29 @@ public class ClienteController {
 	}
 	
 	
-//	@RequestMapping(value="/buscarcliente", method = RequestMethod.GET)
-//	public String buscarClientes(){
-//		return "cliente/buscarCliente";
+	@RequestMapping(value="/buscarcliente", method = RequestMethod.GET)
+	public String buscarClientes(){
+		return "cliente/buscarCliente";
+	}
+	
+	
+//	@RequestMapping(value="/buscarcliente",  method = RequestMethod.POST)
+//	public String buscarClientes(@PathVariable("buscarcliente") String cpf){
+//		Cliente cliente = clientedao.findBycpf(cpf);
+//		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
+//		modelView.addObject("cliente", cliente);
+//		return "cliente/detalhesCliente";
 //	}
 	
 	
-	@RequestMapping(value="/buscarcliente")
-	public String buscarClientes(@PathVariable("buscarcliente") String cpf){
-		Cliente cliente = clientedao.findBycpf(cpf);
+	@RequestMapping(value="/buscarcliente", method = RequestMethod.POST)
+	public ModelAndView buscarClientes(String cpf){
+		Cliente cliente=clientedao.findBycpf(cpf);
+//		clientedao.inserirCliente(cliente);
 		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
 		modelView.addObject("cliente", cliente);
-		return "cliente/detalhesCliente";
+//		System.out.println(cliente.toString());
+		return modelView;
 	}
 	
 	

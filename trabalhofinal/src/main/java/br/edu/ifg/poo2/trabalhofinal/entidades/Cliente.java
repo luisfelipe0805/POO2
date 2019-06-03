@@ -22,12 +22,11 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_id_seq")
 	private long id;
 	@Column(name="NOME", length=100)
-	private String nome;
-	
+	private String nome;	
 	@Column(name="CPF", length=11)
 	private String cpf;
-	@Column(name="CODIGO", length=50)
-	private String codigo;
+	@Column(name="RG", length=50)
+	private String rg;
 	@Column(name="SEXO", length=1)
 	private String sexo;
 	
@@ -55,12 +54,7 @@ public class Cliente implements Serializable{
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
+	
 
 	public String getSexo() {
 		return sexo;
@@ -68,6 +62,19 @@ public class Cliente implements Serializable{
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + "]";
 	}
 	
 	
