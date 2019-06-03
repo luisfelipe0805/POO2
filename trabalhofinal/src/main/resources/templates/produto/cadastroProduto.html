@@ -3,7 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	
 	<head>
-		<title>Cadastro Cliente</title>
+		<title>Cadastro Produto</title>
 
 		<!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -15,35 +15,18 @@
 	</head>
 	
 	<body>
-		<h1>Cadastro de Cliente</h1>
+		<h1>Cadastro Produto</h1>
 		<form  class="container" method="post">
-			<div class="row">
+			
 				Nome: <br>
 				<input type="text" name="nome" value=""/><br>
-				<div class="input-field col s4">
-					Cpf:<br>
-					<input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" ><br>
-				</div>
-				<div  class="input-field col s4">
-					Codigo:<br>
-					<input type="text" name="codigo" value=""/><br>
-				 </div>
-				<div  class="input-field col s4">
-					Sexo:
-						<p>
-					     <label>
-					        <input name="sexo" type="radio" value ="m" />
-					        <span>Masculino</span>
-					      </label>
-					    </p>
-					    <p>
-					     <label>
-					        <input name="sexo" type="radio" value ="f" />
-					        <span>Feminino</span>
-					      </label>
-					    </p>
-				 </div> 		
-			</div>
+				Descricao:<br>
+					<input type="text" name="descricao" value="" /><br>
+				Quantidade:<br>
+					<input type="text" name="quantidade" value=""/><br>
+				Un. de Medida:<br>
+					<input type="text" name="unidadeMedida" value=""/><br>
+				
   		<button class="btn-small waves-effect waves-light" type="submit" >Salvar<i class="material-icons right">send</i></button>
   		
 		<h3 ><a href="/cliente" class="waves-effect waves-light btn-small"><i class="material-icons left">close</i>Cancelar</a></h3>	
