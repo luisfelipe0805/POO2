@@ -23,6 +23,7 @@ public class Cliente implements Serializable{
 	private long id;
 	@Column(name="NOME", length=100)
 	private String nome;
+	
 	@Column(name="CPF", length=11)
 	private String cpf;
 	@Column(name="CODIGO", length=50)

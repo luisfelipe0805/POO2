@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import br.edu.ifg.poo2.trabalhofinal.entidades.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
+public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+	
+	public Cliente findBycpf(String cpf);
 	
 }

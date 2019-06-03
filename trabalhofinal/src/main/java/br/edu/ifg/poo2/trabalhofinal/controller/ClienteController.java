@@ -2,6 +2,7 @@ package br.edu.ifg.poo2.trabalhofinal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,6 +49,21 @@ public class ClienteController {
 		Iterable<Cliente> listaClientes = clientedao.findAll();
 		modelView.addObject("clientes", listaClientes);
 		return modelView;
+	}
+	
+	
+//	@RequestMapping(value="/buscarcliente", method = RequestMethod.GET)
+//	public String buscarClientes(){
+//		return "cliente/buscarCliente";
+//	}
+	
+	
+	@RequestMapping(value="/buscarcliente")
+	public String buscarClientes(@PathVariable("buscarcliente") String cpf){
+		Cliente cliente = clientedao.findBycpf(cpf);
+		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
+		modelView.addObject("cliente", cliente);
+		return "cliente/detalhesCliente";
 	}
 	
 	
