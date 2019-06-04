@@ -19,13 +19,16 @@ public class Produto implements Serializable {
 	private long id;
 	@Column(name="NOME", length=100)
 	private String nome;
+	@Column(name="CODIGO", length=16)
+	private String codigo;
 	@Column(name="DESCRICAO", length=100)
 	private String descricao;
 	@Column(name="QUANTIDADE")
 	private float quantidade;
 	@Column(name="UNIDADE_MEDIDA", length=25)
 	private String unidadeMedida;
-		
+	
+	
 	public Produto() {
 		super();
 	}
@@ -58,6 +61,12 @@ public class Produto implements Serializable {
 	}
 	public void setUnidadeMedida(String unidadeMedida) {
 		this.unidadeMedida = unidadeMedida;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	
 	

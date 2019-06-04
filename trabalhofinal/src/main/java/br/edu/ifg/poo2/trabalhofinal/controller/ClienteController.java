@@ -21,9 +21,12 @@ public class ClienteController {
 	
 	@RequestMapping(value="/cadastrocliente", method = RequestMethod.POST)
 	public String cadastroCliente(Cliente cliente){
-		clientedao.save(cliente);
-//		clientedao.inserirCliente(cliente);
-		return "redirect:/clienteCadastrado";
+		if(!clientedao.existsBycpf(cliente.getCpf())){
+			clientedao.save(cliente);
+//			clientedao.inserirCliente(cliente);
+			return "redirect:/clienteCadastrado";
+		}
+		return "redirect:/cliente";
 	}
 	
 	@RequestMapping(value="/cadastrocliente", method = RequestMethod.GET)
@@ -57,23 +60,20 @@ public class ClienteController {
 		return "cliente/buscarCliente";
 	}
 	
-	
-//	@RequestMapping(value="/buscarcliente",  method = RequestMethod.POST)
-//	public String buscarClientes(@PathVariable("buscarcliente") String cpf){
-//		Cliente cliente = clientedao.findBycpf(cpf);
-//		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
-//		modelView.addObject("cliente", cliente);
-//		return "cliente/detalhesCliente";
-//	}
-	
+
 	
 	@RequestMapping(value="/buscarcliente", method = RequestMethod.POST)
 	public ModelAndView buscarClientes(String cpf){
 		Cliente cliente=clientedao.findBycpf(cpf);
-//		clientedao.inserirCliente(cliente);
 		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
 		modelView.addObject("cliente", cliente);
 //		System.out.println(cliente.toString());
+		return modelView;
+	}
+	
+	public ModelAndView deletarClientes(String cpf){
+//		clientedao.
+		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
 		return modelView;
 	}
 	

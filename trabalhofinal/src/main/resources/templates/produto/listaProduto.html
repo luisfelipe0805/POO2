@@ -15,10 +15,11 @@
 <body>
 	<h1>Lista de Produtos</h1>
 
-	<table>
+	<table class="striped">
 		<thead>
 			<tr>
 				<th>Nome</th>
+				<th>Codigo</th>
 				<th>Descricao</th>
 				<th>Quantidade</th>
 				<th>Un. de Medida</th>
@@ -27,6 +28,7 @@
 		<tbody>
 		<tr th:each= "produto : ${produtos}">
 			<td><span th:text ="${produto.nome}"></span></td>
+			<td><span th:text ="${produto.codigo}"></span></td>
 			<td><span th:text ="${produto.descricao}"></span></td>
 			<td><span th:text ="${produto.quantidade}"></span></td>
 			<td><span th:text ="${produto.unidadeMedida}"></span></td>
