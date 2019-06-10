@@ -7,12 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.ifg.poo2.trabalhofinal.dao.ClienteDao;
 import br.edu.ifg.poo2.trabalhofinal.entidades.Cliente;
 import br.edu.ifg.poo2.trabalhofinal.repository.ClienteRepository;
 
 @Controller
-
 public class ClienteController {
 	
 	@Autowired

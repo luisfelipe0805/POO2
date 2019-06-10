@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,13 +13,18 @@ import org.springframework.stereotype.Service;
 
 import br.edu.ifg.poo2.trabalhofinal.entidades.Cliente;
 
-@Repository
-public class ClienteDao {
+
+public class ClienteDaoRel implements ClienteDAO{
 	
-	@Autowired
+
 	private EntityManager entityManager;
 	
 	
+	public ClienteDaoRel( ) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("test");
+		entityManager= factory.createEntityManager();
+	}
+
 	public void inserirCliente(Cliente	 cliente) {		
 		entityManager.getTransaction().begin();
 		entityManager.persist(cliente);
