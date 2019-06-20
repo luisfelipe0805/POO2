@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import br.edu.ifg.poo2.trabalhofinal.entidades.Produto;
 import br.edu.ifg.poo2.trabalhofinal.entidades.Produto;
 import br.edu.ifg.poo2.trabalhofinal.repository.ProdutoRepository;
 
@@ -42,6 +42,22 @@ public class ProdutoController {
 		ModelAndView modelView = new ModelAndView("produto/listaProduto");
 		Iterable<Produto> listaprodutos = produtoDao.findAll();
 		modelView.addObject("produtos", listaprodutos);
+		return modelView;
+	}
+	
+	
+	@RequestMapping(value="/buscarproduto", method = RequestMethod.GET)
+	public String buscarClientes(){
+		return "produto/buscarProduto";
+	}
+	
+
+	@RequestMapping(value="/buscarproduto", method = RequestMethod.POST)
+	public ModelAndView buscarClientes(String codigo){
+		Produto produto=produtoDao.findBycodigo(codigo);
+		ModelAndView modelView = new ModelAndView("produto/detalhesProduto");
+		modelView.addObject("produto", produto);
+		System.out.println(produto.toString());
 		return modelView;
 	}
 	
