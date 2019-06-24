@@ -18,7 +18,7 @@ public class FornecedorController {
 	
 	@RequestMapping(value="/cadastroFornecedor", method = RequestMethod.POST)
 	public String cadastroCliente(Fornecedor fornecedor){
-		if(!fornecedordao.existsBycpf(fornecedor.getCpf())){
+		if(!fornecedordao.existsBycnpj(fornecedor.getCnpj())){
 			fornecedordao.save(fornecedor);
 
 			return "redirect:/fornCadastrado";
@@ -57,8 +57,8 @@ public class FornecedorController {
 	}
 	
 	@RequestMapping(value="/buscarFornecedor", method = RequestMethod.POST)
-	public ModelAndView buscarFornecedor(String cpf){
-		Fornecedor fornecedor=fornecedordao.findBycpf(cpf);
+	public ModelAndView buscarFornecedor(String cnpj){
+		Fornecedor fornecedor=fornecedordao.findBycnpj(cnpj);
 		ModelAndView modelView = new ModelAndView("forn/detalhesForn");
 		modelView.addObject("fornecedor", fornecedor);
 //		System.out.println(cliente.toString());
@@ -67,7 +67,7 @@ public class FornecedorController {
 	
 
 
-	public ModelAndView deletarFornecedor(String cpf){
+	public ModelAndView deletarFornecedor(String cnpj){
 
 		ModelAndView modelView = new ModelAndView("forn/detalhesForn");
 		return modelView;

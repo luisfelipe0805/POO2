@@ -14,18 +14,6 @@ public class TrabalhofinalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TrabalhofinalApplication.class, args);
 		
-//		@Autowired
-//		ClienteRepository clientedao ;
-//		
-//		Cliente cliente = new Cliente();
-//		cliente.setCpf("123456879");
-//		cliente.setNome("felipe");
-//		cliente.setRg("123456789");
-//		cliente.setSexo("m");
-//		
-//		clientedao.save(cliente);
-//		
-//		
 	}
 	
 	

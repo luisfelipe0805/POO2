@@ -1,12 +1,14 @@
 package br.edu.ifg.poo2.trabalhofinal.entidades;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -28,6 +30,8 @@ public class Produto implements Serializable {
 	@Column(name="UNIDADE_MEDIDA", length=25)
 	private String unidadeMedida;
 	
+	@ManyToMany(mappedBy = "produtos")
+	private List<Venda> listaVenda;
 	
 	public Produto() {
 		super();

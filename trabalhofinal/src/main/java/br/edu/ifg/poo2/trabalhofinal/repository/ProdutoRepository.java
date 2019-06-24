@@ -9,4 +9,5 @@ import br.edu.ifg.poo2.trabalhofinal.entidades.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	public Produto findBycodigo(String codigo);
+	
 }

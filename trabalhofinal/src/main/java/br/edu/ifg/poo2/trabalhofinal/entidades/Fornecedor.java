@@ -19,8 +19,8 @@ public class Fornecedor implements Serializable{
 	private long id;
 	@Column(name="NOME", length=100)
 	private String nome;
-	@Column(name="CPF", length=11)
-	private String cpf;
+	@Column(name="CNPJ", length=14)
+	private String cnpj;
 	@Column(name="CODIGO", length=50)
 	private String codigo;
 	
@@ -34,7 +34,7 @@ public class Fornecedor implements Serializable{
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.cpf = cpf;
+		this.cnpj = cpf;
 		this.codigo = codigo;
 	}
 	public long getId() {
@@ -49,12 +49,16 @@ public class Fornecedor implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCpf() {
-		return cpf;
+	
+	
+	public String getCnpj() {
+		return cnpj;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
+
 	public String getCodigo() {
 		return codigo;
 	}

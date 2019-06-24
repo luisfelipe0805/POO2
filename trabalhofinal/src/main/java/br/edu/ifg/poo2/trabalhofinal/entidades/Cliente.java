@@ -1,12 +1,18 @@
 package br.edu.ifg.poo2.trabalhofinal.entidades;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -26,6 +32,10 @@ public class Cliente implements Serializable{
 	private String rg;
 	@Column(name="SEXO", length=1)
 	private String sexo;
+	
+//	@ManyToMany(mappedBy = "cliente")
+//	@Column(name="VENDA")
+//	private List<Venda> venda;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -68,6 +78,15 @@ public class Cliente implements Serializable{
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
+
+	
+//	public List<Venda> getVenda() {
+//		return venda;
+//	}
+//
+//	public void setVenda(List<Venda> venda) {
+//		this.venda = venda;
+//	}
 
 	@Override
 	public String toString() {

@@ -8,9 +8,9 @@ import br.edu.ifg.poo2.trabalhofinal.entidades.Fornecedor;
 @Repository
 public interface FornecedorRepository extends JpaRepository<Fornecedor, Long> {
 	
-	public Fornecedor findBycpf(String cpf);
+	public Fornecedor findBycnpj(String cnpj);
 	
-	public void deleteBycpf(String cpf);
+	public void deleteBycnpj(String cnpj);
 	
-	public Boolean existsBycpf(String cpf);
+	public Boolean existsBycnpj(String cnpj);
 }
