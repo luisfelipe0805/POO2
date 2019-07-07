@@ -6,43 +6,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.ifg.poo2.trabalhofinal.entidades.Cliente;
+import br.edu.ifg.poo2.trabalhofinal.entidades.Compra;
+import br.edu.ifg.poo2.trabalhofinal.entidades.Fornecedor;
 import br.edu.ifg.poo2.trabalhofinal.entidades.Produto;
-import br.edu.ifg.poo2.trabalhofinal.entidades.Venda;
 import br.edu.ifg.poo2.trabalhofinal.factory.ClienteFactory;
+import br.edu.ifg.poo2.trabalhofinal.factory.CompraFactory;
+import br.edu.ifg.poo2.trabalhofinal.factory.FornecedorFactory;
 import br.edu.ifg.poo2.trabalhofinal.factory.ProdutoFactory;
-import br.edu.ifg.poo2.trabalhofinal.factory.VendaFactory;
 import br.edu.ifg.poo2.trabalhofinal.repository.ClienteRepository;
+import br.edu.ifg.poo2.trabalhofinal.repository.CompraRepository;
+import br.edu.ifg.poo2.trabalhofinal.repository.FornecedorRepository;
 import br.edu.ifg.poo2.trabalhofinal.repository.ProdutoRepository;
-import br.edu.ifg.poo2.trabalhofinal.repository.VendaRepository;
-
 
 @Controller
-public class VendaController {
-	@Autowired
-	VendaRepository vendadao;
+public class CompraController {
 	
 	@Autowired
-	ClienteRepository clientedao;
+	FornecedorRepository fornecerodDao;
 	
 	@Autowired
 	ProdutoRepository produtoDao;
 	
+	@Autowired
+	CompraRepository compraDao;
 	
-	@RequestMapping(value="/registrarvenda", method = RequestMethod.GET)
-	public String resgistrarVenda(){
-		VendaFactory vendaFactory = new VendaFactory();
-		ClienteFactory clienteFactory = new ClienteFactory();
+	@RequestMapping(value="/registrarcompra", method = RequestMethod.GET)
+	public String restrarCompra() {
+		CompraFactory compraFactory=new CompraFactory();
+		FornecedorFactory fornecedorFactory = new FornecedorFactory();
 		ProdutoFactory produtoFactory = new ProdutoFactory();
 		
-		Cliente cliente = clienteFactory.getCliente();
+		Fornecedor fornecedor = fornecedorFactory.getFornecedor();
 		Produto produto = produtoFactory.getProduto();
-		
-		clientedao.save(cliente);
 		produtoDao.save(produto);
-		Venda venda =vendaFactory.getVenda(cliente, produto);
-		vendadao.save(venda);
+		fornecerodDao.save(fornecedor);
+		Compra compra = compraFactory.getCompra(fornecedor, produto);
+		compraDao.save(compra);
+		
 		return "index";
+		
 	}
-	
-	
 }
