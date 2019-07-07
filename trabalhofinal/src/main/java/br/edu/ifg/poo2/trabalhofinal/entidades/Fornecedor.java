@@ -1,12 +1,14 @@
 package br.edu.ifg.poo2.trabalhofinal.entidades;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,6 +25,9 @@ public class Fornecedor implements Serializable{
 	private String cnpj;
 	@Column(name="CODIGO", length=50)
 	private String codigo;
+	
+	@OneToMany(mappedBy = "fornecedor")
+	private List<Compra> compras;
 	
 	private static final long serialVersionUID = 1L;
 	

@@ -30,8 +30,12 @@ public class Produto implements Serializable {
 	@Column(name="UNIDADE_MEDIDA", length=25)
 	private String unidadeMedida;
 	
-	@ManyToMany(mappedBy = "produtos")
+	@ManyToMany(mappedBy = "vendaProdutos")
 	private List<Venda> listaVenda;
+	
+	@ManyToMany(mappedBy="compraProdutos")
+	private List<Compra> listaCompra;
+	
 	
 	public Produto() {
 		super();

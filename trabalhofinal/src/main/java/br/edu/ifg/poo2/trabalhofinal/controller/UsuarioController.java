@@ -19,7 +19,7 @@ public class UsuarioController {
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String validaLogin(Usuario usuario){
-		if(usuariodao.existsByloginAndpassword(usuario.getLogin(),usuario.getPassword())){
+		if(usuariodao.existsByLoginAndPassword(usuario.getLogin(),usuario.getPassword())){
 			return "login/index";
 		}
 		return "redirect:/login";

@@ -39,8 +39,8 @@ public class VendaController {
 		
 		clientedao.save(cliente);
 		produtoDao.save(produto);
-		
-		vendadao.save(vendaFactory.getVenda(cliente, produto));
+		Venda venda =vendaFactory.getVenda(cliente, produto);
+		vendadao.save(venda);
 		return "index";
 	}
 	

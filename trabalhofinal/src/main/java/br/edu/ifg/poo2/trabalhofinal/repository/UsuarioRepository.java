@@ -8,9 +8,9 @@ import br.edu.ifg.poo2.trabalhofinal.entidades.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	
-	public Boolean existsBylogin(String login);
-	public Boolean existsBypassword(String password);
+	public Boolean existsByLogin(String login);
+	public Boolean existsByPassword(String password);
 	
-	public Boolean existsByloginAndpassword(String login, String password);
+	public Boolean existsByLoginAndPassword(String login, String password);
 
 }

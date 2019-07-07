@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -33,9 +34,9 @@ public class Cliente implements Serializable{
 	@Column(name="SEXO", length=1)
 	private String sexo;
 	
-//	@ManyToMany(mappedBy = "cliente")
-//	@Column(name="VENDA")
-//	private List<Venda> venda;
+	@OneToMany(mappedBy="cliente")  
+	private List<Venda> vendas;
+	
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -79,14 +80,6 @@ public class Cliente implements Serializable{
 		this.rg = rg;
 	}
 
-	
-//	public List<Venda> getVenda() {
-//		return venda;
-//	}
-//
-//	public void setVenda(List<Venda> venda) {
-//		this.venda = venda;
-//	}
 
 	@Override
 	public String toString() {
