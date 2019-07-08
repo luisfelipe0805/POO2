@@ -30,20 +30,35 @@ public class CompraController {
 	@Autowired
 	CompraRepository compraDao;
 	
-	@RequestMapping(value="/registrarcompra", method = RequestMethod.GET)
-	public String restrarCompra() {
-		CompraFactory compraFactory=new CompraFactory();
-		FornecedorFactory fornecedorFactory = new FornecedorFactory();
-		ProdutoFactory produtoFactory = new ProdutoFactory();
-		
-		Fornecedor fornecedor = fornecedorFactory.getFornecedor();
-		Produto produto = produtoFactory.getProduto();
-		produtoDao.save(produto);
-		fornecerodDao.save(fornecedor);
-		Compra compra = compraFactory.getCompra(fornecedor, produto);
-		compraDao.save(compra);
-		
-		return "index";
-		
+	@RequestMapping(value="/compra", method = RequestMethod.GET)
+	public String restrarCompra() {				
+		return "compra/compra";	
 	}
+	
+	
+	@RequestMapping(value="/registrarcompra", method = RequestMethod.GET)
+	public String resgistrarCompra() {				
+		return "compra/registrarCompra";	
+	}
+	
+	
+
+	
+	
+//	@RequestMapping(value="/registrarcompra", method = RequestMethod.GET)
+//	public String restrarCompra() {
+//		CompraFactory compraFactory=new CompraFactory();
+//		FornecedorFactory fornecedorFactory = new FornecedorFactory();
+//		ProdutoFactory produtoFactory = new ProdutoFactory();
+//		
+//		Fornecedor fornecedor = fornecedorFactory.getFornecedor();
+//		Produto produto = produtoFactory.getProduto();
+//		produtoDao.save(produto);
+//		fornecerodDao.save(fornecedor);
+//		Compra compra = compraFactory.getCompra(fornecedor, produto);
+//		compraDao.save(compra);
+//		
+//		return "index";
+//		
+//	}
 }

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.Mapping;
 public class Venda {
 	@Id	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "venda_id_seq")
-	private long id;
+	private Long id;
 	
 	@ManyToOne(cascade=CascadeType.ALL)   
 	@JoinColumn(name="cliente_id", referencedColumnName="id",nullable=false)   
@@ -58,10 +58,17 @@ public class Venda {
 		this.vendaProdutos.add(produto);
 	}	
 	
-	public long getId() {
+	public Venda(Cliente cliente) {
+		this.cliente=cliente;
+		if  (vendaProdutos==null) {
+			vendaProdutos= new ArrayList<Produto>();
+		}
+	}
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
