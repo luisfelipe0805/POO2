@@ -15,5 +15,6 @@ public class ClienteFactory {
 		cliente.setRg("0000");
 		cliente.setSexo("i");
 		return cliente;
+		
 	}
 }
