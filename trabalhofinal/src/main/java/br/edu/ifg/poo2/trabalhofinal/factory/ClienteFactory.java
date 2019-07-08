@@ -10,7 +10,7 @@ public class ClienteFactory {
 	 */
 	public Cliente getCliente() {
 		Cliente cliente = new Cliente();
-		cliente.setCpf("11111111111");
+		cliente.setCpf("35283065057");
 		cliente.setNome("Nome Teste");
 		cliente.setRg("0000");
 		cliente.setSexo("i");

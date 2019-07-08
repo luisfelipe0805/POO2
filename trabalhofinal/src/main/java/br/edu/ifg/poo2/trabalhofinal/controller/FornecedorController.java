@@ -21,7 +21,7 @@ public class FornecedorController {
 		if(!fornecedordao.existsBycnpj(fornecedor.getCnpj())){
 			fornecedordao.save(fornecedor);
 
-			return "redirect:/fornCadastrado";
+			return "redirect:/fornecedorCadastrado";
 		}
 		return "redirect:/fornecedor";
 	}
@@ -69,7 +69,7 @@ public class FornecedorController {
 
 	public ModelAndView deletarFornecedor(String cnpj){
 
-		ModelAndView modelView = new ModelAndView("forn/detalhesForn");
+		ModelAndView modelView = new ModelAndView("forn/detalhesFornecedor");
 		return modelView;
 	}
 	

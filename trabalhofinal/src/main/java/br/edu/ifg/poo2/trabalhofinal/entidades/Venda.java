@@ -96,7 +96,11 @@ public class Venda {
 		this.cliente = cliente;
 	}
 	
-	
+	public void removerProduto(Produto produto) {
+		if (vendaProdutos.equals(produto)) {
+			vendaProdutos.remove(produto);
+		}
+	}
 		
 	
 	

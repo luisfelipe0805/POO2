@@ -15,13 +15,12 @@ public class ClienteController {
 	
 	@Autowired
 	ClienteRepository clientedao;
-//	ClienteDao clientedao;
+
 	
 	@RequestMapping(value="/cadastrocliente", method = RequestMethod.POST)
 	public String cadastroCliente(Cliente cliente){
 		if(!clientedao.existsBycpf(cliente.getCpf())){
 			clientedao.save(cliente);
-//			clientedao.inserirCliente(cliente);
 			return "redirect:/clienteCadastrado";
 		}
 		return "redirect:/cliente";
@@ -65,12 +64,10 @@ public class ClienteController {
 		Cliente cliente=clientedao.findBycpf(cpf);
 		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
 		modelView.addObject("cliente", cliente);
-//		System.out.println(cliente.toString());
 		return modelView;
 	}
 	
 	public ModelAndView deletarClientes(String cpf){
-//		clientedao.
 		ModelAndView modelView = new ModelAndView("cliente/detalhesCliente");
 		return modelView;
 	}

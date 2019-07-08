@@ -9,7 +9,7 @@ public class FornecedorFactory {
 	 */
 	public Fornecedor getFornecedor() {
 		Fornecedor fornecedor = new Fornecedor();
-		fornecedor.setCnpj("1111111111111");
+		fornecedor.setCnpj("84504701000158");
 		fornecedor.setCodigo("000000");
 		fornecedor.setNome("Fonecedor Teste");
 		return fornecedor;

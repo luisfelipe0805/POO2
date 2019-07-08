@@ -3,7 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
-	<title>Lista de Produtos</title>
+	<title>Lista de Fornecedor</title>
 	<!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <!--Import materialize.css-->
@@ -12,26 +12,22 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
-	<h1>Lista de Produtos</h1>
+<body >
+	<h1>Lista de Fornecedor</h1>
 
 	<table class="striped">
 		<thead>
 			<tr>
 				<th>Nome</th>
-				<th>Codigo</th>
-				<th>Descricao</th>
-				<th>Quantidade</th>
-				<th>Un. de Medida</th>
+				<th>CNPJ</th>
+				<th>CODIGO</th>
 			</tr>		
 		</thead>
 		<tbody>
-		<tr th:each= "produto : ${produtos}">
-			<td><span th:text ="${produto.nome}"></span></td>
-			<td><span th:text ="${produto.codigo}"></span></td>
-			<td><span th:text ="${produto.descricao}"></span></td>
-			<td><span th:text ="${produto.quantidade}"></span></td>
-			<td><span th:text ="${produto.unidadeMedida}"></span></td>
+		<tr th:each= "fornecedor : ${fornecedors}">
+			<td><span th:text ="${fornecedor.nome}"></span></td>
+			<td><span th:text ="${fornecedor.cnpj}"></span></td>
+			<td><span th:text ="${fornecedor.codigo}"></span></td>
 		</tr>
 
 		</tbody>
@@ -40,7 +36,7 @@
 	
 
 	</div>
-	<h3 ><a href="/produto" class="waves-effect waves-light btn-small"><i class="material-icons left">home</i>Menu Produto</a></h3>
+	<h3 ><a href="/fornecedor" class="waves-effect waves-light btn-small"><i class="material-icons left">home</i>Menu Fornecedor</a></h3>
 
 
 
