@@ -10,7 +10,6 @@ import br.edu.ifg.poo2.trabalhofinal.entidades.Fornecedor;
 import br.edu.ifg.poo2.trabalhofinal.repository.FornecedorRepository;
 
 @Controller
-
 public class FornecedorController {
 	
 	@Autowired
@@ -20,7 +19,6 @@ public class FornecedorController {
 	public String cadastroCliente(Fornecedor fornecedor){
 		if(!fornecedordao.existsBycnpj(fornecedor.getCnpj())){
 			fornecedordao.save(fornecedor);
-
 			return "redirect:/fornecedorCadastrado";
 		}
 		return "redirect:/fornecedor";
@@ -31,12 +29,10 @@ public class FornecedorController {
 		return "forn/cadastroFornecedor";
 	}
 	
-	
 	@RequestMapping(value="/fornecedor")
 	public String fornecedor(){
 		return "forn/fornecedor";
 	}
-	
 		
 	@RequestMapping(value="/fornecedorCadastrado", method = RequestMethod.GET)
 	public String fornecedorCadastrado(){
@@ -59,16 +55,12 @@ public class FornecedorController {
 	@RequestMapping(value="/buscarFornecedor", method = RequestMethod.POST)
 	public ModelAndView buscarFornecedor(String cnpj){
 		Fornecedor fornecedor=fornecedordao.findBycnpj(cnpj);
-		ModelAndView modelView = new ModelAndView("forn/detalhesForn");
+		ModelAndView modelView = new ModelAndView("forn/detalhesFornecedor");
 		modelView.addObject("fornecedor", fornecedor);
-//		System.out.println(cliente.toString());
 		return modelView;
 	}
 	
-
-
 	public ModelAndView deletarFornecedor(String cnpj){
-
 		ModelAndView modelView = new ModelAndView("forn/detalhesFornecedor");
 		return modelView;
 	}
